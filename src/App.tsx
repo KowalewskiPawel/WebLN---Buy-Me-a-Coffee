@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { GetInfoResponse } from "@webbtc/webln-types";
 import "./App.css";
 
@@ -34,10 +35,11 @@ function App() {
     }
     try {
       const result = await window.webln.keysend({
-        destination: "",
+        destination:
+          "", // node address
         amount: "1",
         customRecords: {
-          "": "",
+          "": "", // key is Custom Key and value is Custom Value 
         },
       });
       console.log("Result: ", result);
